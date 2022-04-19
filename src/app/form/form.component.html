@@ -1,5 +1,6 @@
 <form class="form">
   <fieldset class="form_rate rate">
+    <h4 class="form_heading">Віддаєш кому тре</h4>
     <div class="rate_control">
       <div class="rate_status" (click)="onSaleDropdownOpen()">
         <p *ngIf="isCurrencyFetched">
@@ -30,6 +31,7 @@
     />
   </fieldset>
   <fieldset class="form_rate rate">
+    <h4 class="form_heading">Отримуєш у лапки</h4>
     <div class="rate_control">
       <div class="rate_status" (click)="onPurchaseDropdownOpen()">
         <p *ngIf="isCurrencyFetched">

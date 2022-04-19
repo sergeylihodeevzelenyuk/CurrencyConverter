@@ -17,6 +17,13 @@
   padding: 0;
 }
 
+.form_heading {
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  margin: 0 0 10px;
+}
+
 .form_rate {
   flex-basis: 200px;
   flex-shrink: 0;
