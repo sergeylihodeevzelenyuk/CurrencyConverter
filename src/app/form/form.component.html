@@ -1,0 +1,62 @@
+<form class="form">
+  <fieldset class="form_rate rate">
+    <div class="rate_control">
+      <div class="rate_status" (click)="onSaleDropdownOpen()">
+        <p *ngIf="isCurrencyFetched">
+          {{ saleCurrencySelected }}
+        </p>
+        <div *ngIf="!isCurrencyFetched" class="form_loading">
+          <app-loading-indicator></app-loading-indicator>
+        </div>
+        <span class="rate_icon" *ngIf="isCurrencyFetched">
+          <app-svg-arrow [active]="isSaleDropdownOpen"></app-svg-arrow>
+        </span>
+      </div>
+      <app-select-drop-down
+        *ngIf="isCurrencyFetched"
+        (currencySelected)="onSaleSelectChange($event)"
+        [isDropdownOpen]="isSaleDropdownOpen"
+        [currencyList]="saleCurrency"
+      ></app-select-drop-down>
+    </div>
+    <input
+      [disabled]="!isCurrencyFetched"
+      class="form_input"
+      type="number"
+      name="saleInputValue"
+      [ngModel]="saleInputValue"
+      (keyup)="onSaleInputKeyup($event)"
+      (focus)="onSaleInputFocus($event)"
+    />
+  </fieldset>
+  <fieldset class="form_rate rate">
+    <div class="rate_control">
+      <div class="rate_status" (click)="onPurchaseDropdownOpen()">
+        <p *ngIf="isCurrencyFetched">
+          {{ purchaseCurrencySelected }}
+        </p>
+        <div *ngIf="!isCurrencyFetched" class="form_loading">
+          <app-loading-indicator></app-loading-indicator>
+        </div>
+        <span class="rate_icon" *ngIf="isCurrencyFetched">
+          <app-svg-arrow [active]="isPurchaseDropdownOpen"></app-svg-arrow
+        ></span>
+      </div>
+      <app-select-drop-down
+        *ngIf="isCurrencyFetched"
+        (currencySelected)="onPurchaseSelectChange($event)"
+        [isDropdownOpen]="isPurchaseDropdownOpen"
+        [currencyList]="purchaseCurrency"
+      ></app-select-drop-down>
+    </div>
+    <input
+      [disabled]="!isCurrencyFetched"
+      class="form_input"
+      type="number"
+      name="purchaseInputValue"
+      [value]="purchaseInputValue"
+      (focus)="onPurchaseInputFocus($event)"
+      (keyup)="onPurchaseInputKeyup($event)"
+    />
+  </fieldset>
+</form>

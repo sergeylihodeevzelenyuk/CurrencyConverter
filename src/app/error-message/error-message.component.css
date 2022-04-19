@@ -1,0 +1,11 @@
+.error {
+  text-align: center;
+}
+
+.error h5 {
+  color: red;
+}
+
+.error p {
+  font-size: 10px;
+}

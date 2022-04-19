@@ -1,0 +1,18 @@
+<div *ngIf="isDropdownOpen" class="rate_dropdown">
+  <div *ngFor="let currency of currencyList">
+    <label
+      [ngClass]="{
+        rate_currency: true,
+        active: currency.isActive
+      }"
+      [for]="currency.code"
+      >{{ currency.code }} {{ currency.name }}
+    </label>
+    <input
+      type="radio"
+      [id]="currency.code"
+      [name]="currency.name"
+      (change)="onSelectChange($event)"
+    />
+  </div>
+</div>

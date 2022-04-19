@@ -1,0 +1,52 @@
+<header class="header">
+  <div class="header_icon">
+    <div class="header_icon-item">
+      <app-svg-logo></app-svg-logo>
+    </div>
+    <h3 class="header_icon-heading">Валютний кiтвертер</h3>
+  </div>
+
+  <table class="header_rates rates">
+    <thead>
+      <tr>
+        <td colspan="2">За курсом Приватбанку</td>
+        <td>Купiвля</td>
+        <td>Продаж</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>EUR</td>
+        <td>UAH</td>
+        <td>
+          <p *ngIf="isCurrencyFetched">{{ eur.purchaseRate }}</p>
+          <div *ngIf="!isCurrencyFetched" class="rates_loading">
+            <app-loading-indicator></app-loading-indicator>
+          </div>
+        </td>
+        <td>
+          <p *ngIf="isCurrencyFetched">{{ eur.saleRate }}</p>
+          <div *ngIf="!isCurrencyFetched" class="rates_loading">
+            <app-loading-indicator></app-loading-indicator>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>USD</td>
+        <td>UAH</td>
+        <td>
+          <p *ngIf="isCurrencyFetched">{{ usd.purchaseRate }}</p>
+          <div *ngIf="!isCurrencyFetched" class="rates_loading">
+            <app-loading-indicator></app-loading-indicator>
+          </div>
+        </td>
+        <td>
+          <p *ngIf="isCurrencyFetched">{{ usd.saleRate }}</p>
+          <div *ngIf="!isCurrencyFetched" class="rates_loading">
+            <app-loading-indicator></app-loading-indicator>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</header>
